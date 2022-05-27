@@ -45,44 +45,42 @@ const App = () => {
   // }, []);
 
   return (
-    <Provider store={store}>
-      <Router>
-        <Navbar />
-        <section className="container">
-          <Alert />
-        </section>
-        <Routes>
-          <Route path="/">
-            <Route index element={<Landing />} />
-            <Route path="register" element={<Register />} />
-            <Route path="login" element={<Login />} />
-            <Route path="extra" element={<Extra />} />
-            <Route path="profiles" element={<Profiles />} />
-            <Route path="profile/:id" element={<Profile />} />
-            <Route path="dashboard" element={<Route component={Dashboard} />} />
-            <Route
-              path="create-profile"
-              element={<Route component={CreateProfile} />}
-            />
-            <Route
-              path="edit-profile"
-              element={<PrivateRoute component={EditProfile} />}
-            />
-            <Route
-              path="add-experience"
-              element={<Route component={AddExperience} />}
-            />
-            <Route
-              path="add-education"
-              element={<Route component={AddEducation} />}
-            />
-            <Route path="posts" element={<Route component={Posts} />} />
-            <Route path="posts/:id" element={<Route component={Post} />} />
-            <Route path="*" element={<NotFound />} />
-          </Route>
-        </Routes>
-      </Router>
-    </Provider>
+    <Router>
+      <Navbar />
+      <section className="container">
+        <Alert />
+      </section>
+      <Routes>
+        <Route path="/">
+          <Route index element={<Landing />} />
+          <Route path="register" element={<Register />} />
+          <Route path="login" element={<Login />} />
+          <Route path="extra" element={<Extra />} />
+          <Route path="profiles" element={<Profiles />} />
+          <Route path="profile/:id" element={<Profile />} />
+          <Route path="dashboard" element={<Route component={Dashboard} />} />
+          <Route
+            path="create-profile"
+            element={<Route component={CreateProfile} />}
+          />
+          <Route
+            path="edit-profile"
+            element={<PrivateRoute component={EditProfile} />}
+          />
+          <Route
+            path="add-experience"
+            element={<Route component={AddExperience} />}
+          />
+          <Route
+            path="add-education"
+            element={<Route component={AddEducation} />}
+          />
+          <Route path="posts" element={<Route component={Posts} />} />
+          <Route path="posts/:id" element={<Route component={Post} />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
+      </Routes>
+    </Router>
   );
 };
 

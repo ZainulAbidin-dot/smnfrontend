@@ -1,10 +1,7 @@
 import React, { useState, Fragment } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { connect } from "react-redux";
-import { login } from "../../actions/auth";
-import PropTypes from "prop-types";
 
-const Login = ({ login, isAuthenticated }) => {
+const Login = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: "",
