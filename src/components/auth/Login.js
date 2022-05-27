@@ -21,7 +21,7 @@ const Login = ({ login, isAuthenticated }) => {
     login(email, password);
   };
 
-  if (isAuthenticated) {
+  if (email) {
     navigate("/dashboard");
   }
 
