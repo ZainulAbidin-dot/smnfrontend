@@ -18,13 +18,11 @@ const Dashboard = ({
     getCurrentProfile();
   }, [getCurrentProfile]);
 
-  return loading && profile === null ? (
-    <Spinner />
-  ) : (
+  return (
     <section className="container">
       <h1 className="large text-primary">Dashboard</h1>
       <p className="lead">
-        <i className="fas fa-user" /> Welcome {user && user.name}
+        <i className="fas fa-user" /> Welcome User
       </p>
       {profile !== null ? (
         <>
