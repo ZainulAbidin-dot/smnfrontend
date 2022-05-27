@@ -28,21 +28,21 @@ import setAuthToken from "./utils/setAuthToken";
 import "./App.css";
 
 const App = () => {
-  useEffect(() => {
-    // check for token in LS when app first runs
-    if (localStorage.token) {
-      // if there is a token set axios headers for all requests
-      setAuthToken(localStorage.token);
-    }
-    // try to fetch a user, if no token or invalid token we
-    // will get a 401 response from our API
-    store.dispatch(loadUser());
+  // useEffect(() => {
+  //   // check for token in LS when app first runs
+  //   if (localStorage.token) {
+  //     // if there is a token set axios headers for all requests
+  //     setAuthToken(localStorage.token);
+  //   }
+  //   // try to fetch a user, if no token or invalid token we
+  //   // will get a 401 response from our API
+  //   // store.dispatch(loadUser());
 
-    // log user out from all tabs if they log out in one tab
-    window.addEventListener("storage", () => {
-      if (!localStorage.token) store.dispatch({ type: LOGOUT });
-    });
-  }, []);
+  //   // log user out from all tabs if they log out in one tab
+  //   window.addEventListener("storage", () => {
+  //     if (!localStorage.token) store.dispatch({ type: LOGOUT });
+  //   });
+  // }, []);
 
   return (
     <Provider store={store}>
@@ -59,13 +59,10 @@ const App = () => {
             <Route path="extra" element={<Extra />} />
             <Route path="profiles" element={<Profiles />} />
             <Route path="profile/:id" element={<Profile />} />
-            <Route
-              path="dashboard"
-              element={<PrivateRoute component={Dashboard} />}
-            />
+            <Route path="dashboard" element={<Route component={Dashboard} />} />
             <Route
               path="create-profile"
-              element={<PrivateRoute component={CreateProfile} />}
+              element={<Route component={CreateProfile} />}
             />
             <Route
               path="edit-profile"
@@ -73,17 +70,14 @@ const App = () => {
             />
             <Route
               path="add-experience"
-              element={<PrivateRoute component={AddExperience} />}
+              element={<Route component={AddExperience} />}
             />
             <Route
               path="add-education"
-              element={<PrivateRoute component={AddEducation} />}
+              element={<Route component={AddEducation} />}
             />
-            <Route path="posts" element={<PrivateRoute component={Posts} />} />
-            <Route
-              path="posts/:id"
-              element={<PrivateRoute component={Post} />}
-            />
+            <Route path="posts" element={<Route component={Posts} />} />
+            <Route path="posts/:id" element={<Route component={Post} />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
