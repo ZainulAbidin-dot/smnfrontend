@@ -18,12 +18,12 @@ const Login = ({ login, isAuthenticated }) => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    login(email, password);
-  };
+    // login(email, password);
 
-  if (email) {
-    navigate("/dashboard");
-  }
+    if (email) {
+      navigate("/dashboard");
+    }
+  };
 
   return (
     <Fragment>
