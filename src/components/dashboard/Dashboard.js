@@ -14,9 +14,9 @@ const Dashboard = ({
   auth: { user },
   profile: { profile, loading },
 }) => {
-  useEffect(() => {
-    getCurrentProfile();
-  }, [getCurrentProfile]);
+  // useEffect(() => {
+  //   getCurrentProfile();
+  // }, [getCurrentProfile]);
 
   return (
     <section className="container">
