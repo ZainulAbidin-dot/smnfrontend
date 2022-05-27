@@ -58,23 +58,11 @@ const App = () => {
           <Route path="extra" element={<Extra />} />
           <Route path="profiles" element={<Profiles />} />
           <Route path="profile/:id" element={<Profile />} />
-          <Route path="dashboard" element={<Route component={Dashboard} />} />
-          <Route
-            path="create-profile"
-            element={<Route component={CreateProfile} />}
-          />
-          <Route
-            path="edit-profile"
-            element={<PrivateRoute component={EditProfile} />}
-          />
-          <Route
-            path="add-experience"
-            element={<Route component={AddExperience} />}
-          />
-          <Route
-            path="add-education"
-            element={<Route component={AddEducation} />}
-          />
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="create-profile" element={<CreateProfile />} />
+          <Route path="edit-profile" element={<EditProfile />} />
+          <Route path="add-experience" element={<AddExperience />} />
+          <Route path="add-education" element={<AddEducation />} />
           <Route path="posts" element={<Route component={Posts} />} />
           <Route path="posts/:id" element={<Route component={Post} />} />
           <Route path="*" element={<NotFound />} />
