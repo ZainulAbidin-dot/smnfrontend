@@ -56,7 +56,12 @@ const Login = ({ login, isAuthenticated }) => {
               onChange={onChange}
             />
           </div>
-          <input type="submit" className="btn btn-primary" value="Login" />
+          <input
+            type="submit"
+            onSubmit={(e) => onSubmit(e)}
+            className="btn btn-primary"
+            value="Login"
+          />
         </form>
         <p className="my-1">
           Don't have an account? <Link to="/register">Sign Up</Link>
