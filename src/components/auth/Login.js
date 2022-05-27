@@ -20,7 +20,7 @@ const Login = ({ login, isAuthenticated }) => {
     e.preventDefault();
     // login(email, password);
 
-    if (email) {
+    if (formData) {
       navigate("/dashboard");
     }
   };
